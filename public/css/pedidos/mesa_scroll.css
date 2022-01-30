@@ -1,0 +1,21 @@
+#example {
+    display: flex;
+    justify-content: center;
+}
+
+.k-card-deck-scrollwrap {
+    max-width: 2000px;
+}
+
+.k-card-deck {
+    box-sizing: border-box;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 16px 16px 16px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.k-card-action > .k-button{
+    width: 100%;
+}

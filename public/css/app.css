@@ -1,0 +1,375 @@
+.login-logos{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-logos img{
+  border: 5px solid white;
+  margin: 10px 20px;
+}
+
+.login-logos img#logo-fitel{
+  height: 48px;
+}
+
+.new-button{
+  margin-right: 25px;
+  margin-top: 15px;
+}
+.span-rojo{
+  color: #dd0000;
+}
+.button-rigth{
+  margin-right: 25px;
+  margin-top: 15px;
+}
+.card-no-bottom-line{
+  box-shadow: 0 0 !important;
+}
+
+.form-modal-left .form-group label{
+  text-align: left;
+}
+
+.control-div{
+  padding-top: 7px;
+}
+
+.push-back{
+  z-index: 100;
+}
+
+.not-active {
+
+  display: none;
+  /*pointer-events: none;*/
+  /*!*cursor: not-allowed;*!*/
+  /*color: gray !important;*/
+}
+
+.pre-description{
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: white; 
+}
+
+textarea{
+  resize: none;
+}
+
+/* Jquery Validation */
+
+input.error { 
+  border: 1px solid red;
+  margin-bottom: .5em;
+}
+label.error {
+  color: red;
+  font-weight: normal;
+}
+
+.label-right {
+	text-align: right !important;
+}
+
+
+/*style grid kendo-inicio*/
+.k-grid .k-header .k-link{  text-align: center !important;font-weight: bold !important}
+.k-grid th.k-header{text-align: center !important;font-weight: bold;}
+.k-grid tbody tr{text-align:left !important}
+.kendo-buttons{
+  margin-right: 10px;
+}
+/*style grid kendo-fin*/
+
+
+/* Debugbar */
+
+div.phpdebugbar {
+  z-index: 100000 !important;
+}
+
+.table-container{
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.table-container-lg{
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.table-role{
+  margin-bottom: 10px;
+}
+
+.table-condensed>tbody>tr>td{
+  padding: 2px;
+}
+
+.checkbox3 label{
+  padding: 8px 0 2px 30px;
+}
+
+/* Jquery Validation2 */
+input.error, span.error, textarea.error, select.error, table.error {
+  border: 1px solid red !important; 
+  margin-bottom: .5em;
+}
+
+label.error {
+  color: red;
+  font-weight: normal;
+}
+
+/* Select2 */
+select.select2 + span{
+  width: 100% !important;
+}
+
+select + span .select2-selection{
+  border-radius: 0px !important;
+}
+
+.select2-container .select2-selection--single{
+  height: 34px !important;
+  min-width: 177px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 32px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 31px !important;
+}
+
+.modal-backdrop + span.select2-container--default{
+  z-index: 1000000;   
+}
+/* end select2 */
+/* Select3 */
+/*
+select.select3 + span{
+  width: 100% !important;
+}
+
+select + span .select3-selection{
+  border-radius: 0px !important;
+}
+
+.select3-container .select3-selection--single{
+  height: 34px !important;
+}
+
+.select3-container--default .select3-selection--single .select3-selection__arrow {
+  height: 32px !important;
+}
+
+.select3-container--default .select3-selection--single .select3-selection__rendered {
+  color: #444;
+  line-height: 31px !important;
+}
+
+.modal-backdrop + span.select3-container--default{
+  z-index: 1000000;   
+*/
+}
+/* end select3 */
+
+.bootbox .modal-title{
+  text-transform: uppercase;
+}
+
+.btn-color{
+  padding: 7px 47px;
+}
+
+.alarm-data .title, .alarm-data .sub-title{
+  text-align: center !important;
+}
+
+.alarm-data .title{
+  font-size: 2em !important;
+}
+
+.content.alarm-data{
+  float: none !important;
+}
+
+.col-one-half{
+  width: 13%;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .col-one-half{
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .col-one-half{
+    width: 40%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .col-one-half{
+    width: 30%;
+  }
+}
+
+.no-link{
+  cursor: default;
+}
+
+.k-grid tr.tr-head td {
+  border-bottom: 1px solid #998;
+  text-align: center;
+}
+
+.k-grid tbody.report-body tr:last-child {
+  font-weight: bold;
+}
+
+.btn-no-top{
+  margin-top: 0px;
+}
+
+table thead th a.k-link{
+  color: #353535 !important;
+}
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #fff;
+  background-color: #EF4836 !important;
+}
+.btn-no-top{
+  margin-top: 0px;
+}
+.otros{
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 20px;
+}
+.otros label{
+  display: block;
+  position: relative;
+  padding: 11px 0 11px 30px;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: -4px;
+}
+
+.tecnologia span.icons{
+  display: none;
+}
+
+/*css configuration */
+
+.margin-btn-configuration{
+  margin-top : 35px !important;
+}
+.margin-btn-configuration-hss{
+  margin-top : -12px !important;
+}
+.label-required:after{
+  content: " (*)";
+  font-weight: bold;
+  color:red;
+}
+.line-slash:after{
+  content: "/";
+  font-weight: bold;
+  color:black;
+}
+.scrollable-custom{
+  min-height: 100px;
+  max-height: 500px;
+  height: auto;
+  overflow-x: no-display;
+  overflow-y: scroll;
+}
+.simbol-sum{
+  color: #19B5FE;
+}
+
+.one{
+ font-weight: bold;
+}
+.remove-color{
+  color: #fe0121;
+}
+.div-sim-card{
+  width: 12% !important;
+}
+
+.disabled-input{
+  pointer-events:none;
+  color:#AAA;
+  background:#F5F5F5;
+}
+
+
+.highcharts-credits {
+	display: none;
+}
+
+
+.map_popup_rigth .leaflet-popup-tip-container {
+	top: 45%;
+	left: -7px !important;
+	width: 28px;
+	height: 31px;
+/*
+	margin-left: 8px;
+*/
+	position: absolute;
+}
+
+.map_popup_rigth .leaflet-popup-tip {
+	width: 17px;
+	height: 17px;
+	margin-right: 0px;
+	margin-top: 7px;
+	margin-left: 19px;
+}
+
+.top_map_options .col-md-1 {
+	padding-right: 4px;
+	padding-left: 1px;
+}
+.top_map_options .col-md-2 {
+	padding-right: 4px;
+	padding-left: 1px;
+}
+.top_map_options .fecha-actualiza {
+	margin-bottom: 0px;
+	margin-top: 6px;
+	font-size: 16px;
+	width: auto;
+    border: 1px solid;
+}
+.top_map_options .title-maps {
+	margin-bottom: 0px;
+	margin-top: 7px;
+}
+.top_map_options .form-check-input {
+	height:24px;
+	width:24px;
+}
+.top_map_options .form-check-label {
+	font-size: 16px;
+	margin-top: 10px;
+    margin-left: 10px;
+}
+.top_map_options .form-check {
+	display: flex;
+    align-items: center;
+}

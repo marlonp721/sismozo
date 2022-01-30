@@ -1,0 +1,31 @@
+.text-p{
+	font-size: 11px;
+	color: #FFF;
+}
+.fondo-color{
+	background-color: #00024D;
+	color: #FFF;
+}
+.img{
+	padding-top: 9px;
+}
+
+@media screen and (max-width: 768px) {
+	.centrar{
+		text-align: center;
+	}
+	.text-p{
+		line-height: 1.5;
+	}
+	.titulo{
+		line-height: 1.5;
+	}
+}
+
+.fondo-color2{
+	padding:8px;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	background-color: #00024D;
+	color: #FFF;
+}
