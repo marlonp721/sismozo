@@ -167,7 +167,6 @@ return [
          * Package Service Providers...
          */
         Collective\Html\HtmlServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
 
         Zizaco\Entrust\EntrustServiceProvider::class,
         App\Extensions\EntrustFix\EntrustFixServiceProvider::class,
