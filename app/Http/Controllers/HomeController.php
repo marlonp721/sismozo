@@ -87,6 +87,13 @@ class HomeController extends Controller
             $datapedidos->client = strtoupper($request->client);
             $datapedidos->updated_at = null;
             $datapedidos->save();
+        }else{
+            $datapedidos = new Pedidos();
+            $datapedidos->date = strtoupper($request->date);
+            $datapedidos->mesa = strtoupper($request->mesa);
+            $datapedidos->client = "CLIENTE VARIOS";
+            $datapedidos->updated_at = null;
+            $datapedidos->save();
         }
         $orden = HomeController::getidentificador();
         $detalle = HomeController::insertDetalles($request,$orden[0]);
