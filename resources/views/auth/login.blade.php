@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-                <div class="fondo-color2 text-center "><b>Iniciar Sesión</b></div>
+                <div class="fondo-color2 text-center "><b>Usuario y Contraseña</b></div>
                 <div class="panel-body">
                         <div>
                             <label for="username" class="col-md-6 control-label">Usuario : Mozo</label>
