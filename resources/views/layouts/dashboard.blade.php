@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <!-- end Card Body-->
-
+                <div class="col-md-12 text-center"><H4><strong>LISTA DE PEDIDOS<strong></H4></div>
             </div>
         </div>
     </div>
