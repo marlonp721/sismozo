@@ -1,5 +1,7 @@
-
+$( "#cmb_fecha" ).hide();
 $( "#cod_id" ).hide();
+$( ".valpedido" ).hide();
+
 var num_mesa;
 function obtenerid(id){
     num_mesa = id;
@@ -28,88 +30,100 @@ switch (num_mesa) {
         break;
     }
 
+function modal_cliente(){
+        bootbox.dialog({
+            className: 'modal-danger',
+            closeButton: false,
+            message: "INTRODUCIR NOMBRE DE CLIENTE",
+            title: "VALIDACION",
+            buttons: {
+                default: {
+                    label: "CERRAR",
+                    className: "btn-danger pr",
+                    callback: function() {
+                        
+                    }
+                },
+            }
+        });
+    }
 
-$(document).ready(function() {
-$("#calcularmonto").click(function(){
-    $name_client = $('#cmb_cliente').val();
-    if( $name_client == ""){
-    bootbox.dialog({
-        className: 'modal-danger',
-        closeButton: false,
-        message: "INTRODUCIR NOMBRE DE CLIENTE",
-        title: "VALIDACION",
-        buttons: {
-            default: {
-                label: "CERRAR",
-                className: "btn-danger",
-                callback: function() {
-                    
-                }
-            },
+    function validacion_cantidades(){
+        $v_ajidegallina = $('#cmb_ajidegallina').val();
+        $v_tallarinconpollo = $('#cmb_tallarinconpollo').val();
+        $v_lomosaltado = $('#cmb_lomosaltado').val();
+        $v_estofadodepollo = $('#cmb_estofadodepollo').val();
+        $v_tacutacu = $('#cmb_tacutacu').val();
+        $v_chicharron = $('#cmb_chicharron').val();
+        if( isNaN($v_ajidegallina) || isNaN($v_tallarinconpollo) || isNaN($v_lomosaltado) || isNaN($v_estofadodepollo) || isNaN($v_tacutacu) || isNaN($v_chicharron) ){
+        bootbox.dialog({
+            className: 'modal-danger',
+            closeButton: false,
+            message: "INTRODUCIR SOLO NUMEROS EN LAS CANTIDADES",
+            title: "VALIDACION",
+            buttons: {
+                default: {
+                    label: "CERRAR",
+                    className: "btn-danger",
+                    callback: function() {
+                        
+                    }
+                },
+            }
+        });
         }
-    });
-    }
-    else{
-    $v_ajidegallina = $('#cmb_ajidegallina').val();
-    $v_tallarinconpollo = $('#cmb_tallarinconpollo').val();
-    $v_lomosaltado = $('#cmb_lomosaltado').val();
-    $v_estofadodepollo = $('#cmb_estofadodepollo').val();
-    $v_tacutacu = $('#cmb_tacutacu').val();
-    $v_chicharron = $('#cmb_chicharron').val();
-    if( isNaN($v_ajidegallina) || isNaN($v_tallarinconpollo) || isNaN($v_lomosaltado) || isNaN($v_estofadodepollo) || isNaN($v_tacutacu) || isNaN($v_chicharron) ){
-    bootbox.dialog({
-        className: 'modal-danger',
-        closeButton: false,
-        message: "INTRODUCIR SOLO NUMEROS EN LAS CANTIDADES",
-        title: "VALIDACION",
-        buttons: {
-            default: {
-                label: "CERRAR",
-                className: "btn-danger",
-                callback: function() {
-                    
-                }
-            },
+        else
+        {
+        if($v_ajidegallina==''){ $v_ajidegallina=0; }
+        $monto_ajidegallina = 10.0 * $v_ajidegallina;
+        $('#monto_ajidegallina').html($monto_ajidegallina.toFixed(2));
+    
+    
+        if($v_tallarinconpollo==''){ $v_tallarinconpollo=0; }
+        $monto_tallarinconpollo = 10.0 * $v_tallarinconpollo;
+        $('#monto_tallarinconpollo').html($monto_tallarinconpollo.toFixed(2));
+    
+        
+        if($v_lomosaltado==''){ $v_lomosaltado=0; }
+        $monto_lomosaltado = 10.0 * $v_lomosaltado;
+        $('#monto_lomosaltado').html($monto_lomosaltado.toFixed(2));
+    
+        
+        if($v_estofadodepollo==''){ $v_estofadodepollo=0; }
+        $monto_estofadodepollo = 10.0 * $v_estofadodepollo;
+        $('#monto_estofadodepollo').html($monto_estofadodepollo.toFixed(2));
+    
+        
+        if($v_tacutacu==''){ $v_tacutacu=0; }
+        $monto_tacutacu = 10.0 * $v_tacutacu;
+        $('#monto_tacutacu').html($monto_tacutacu.toFixed(2));
+    
+        
+        if($v_chicharron==''){ $v_chicharron=0; }
+        $monto_chicharron = 10.0 * $v_chicharron;
+        $('#monto_chicharron').html($monto_chicharron.toFixed(2));
+        $( ".valpedido" ).show();
+        $monto_total = $monto_ajidegallina + $monto_tallarinconpollo + $monto_lomosaltado + $monto_estofadodepollo + $monto_tacutacu + $monto_chicharron ;
+        $('#resultmontototal').html("<b>"+$monto_total.toFixed(2)+"</b>");
         }
-    });
     }
-    else
-    {
-    if($v_ajidegallina==''){ $v_ajidegallina=0; }
-    $monto_ajidegallina = 10.0 * $v_ajidegallina;
-    $('#monto_ajidegallina').html($monto_ajidegallina.toFixed(2));
-
-
-    if($v_tallarinconpollo==''){ $v_tallarinconpollo=0; }
-    $monto_tallarinconpollo = 10.0 * $v_tallarinconpollo;
-    $('#monto_tallarinconpollo').html($monto_tallarinconpollo.toFixed(2));
-
     
-    if($v_lomosaltado==''){ $v_lomosaltado=0; }
-    $monto_lomosaltado = 10.0 * $v_lomosaltado;
-    $('#monto_lomosaltado').html($monto_lomosaltado.toFixed(2));
-
-    
-    if($v_estofadodepollo==''){ $v_estofadodepollo=0; }
-    $monto_estofadodepollo = 10.0 * $v_estofadodepollo;
-    $('#monto_estofadodepollo').html($monto_estofadodepollo.toFixed(2));
-
-    
-    if($v_tacutacu==''){ $v_tacutacu=0; }
-    $monto_tacutacu = 10.0 * $v_tacutacu;
-    $('#monto_tacutacu').html($monto_tacutacu.toFixed(2));
-
-    
-    if($v_chicharron==''){ $v_chicharron=0; }
-    $monto_chicharron = 10.0 * $v_chicharron;
-    $('#monto_chicharron').html($monto_chicharron.toFixed(2));
-
-    $monto_total = $monto_ajidegallina + $monto_tallarinconpollo + $monto_lomosaltado + $monto_estofadodepollo + $monto_tacutacu + $monto_chicharron ;
-    $('#resultmontototal').html("<b>"+$monto_total.toFixed(2)+"</b>");
+    function validacion_pedidos(){
+        $name_client = $('#cmb_cliente').val();
+        if( $name_client == ""){
+            modal_cliente();
+        }
+        else{
+            validacion_cantidades();
+        }
     }
+    function botoncalcularmonto(){
+    $("#calcularmonto").on("click",function(){
+        validacion_pedidos();
+    }); 
     }
-}); 
-});
+
+botoncalcularmonto();
 
 $(document).on('change','input[type="checkbox"]' ,function(e) {
 if(this.id=="c_ajidegallina") {

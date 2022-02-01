@@ -11,3 +11,7 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	var cont=1;
+</script>

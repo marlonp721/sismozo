@@ -5,7 +5,8 @@
     </div>
         <label for="date" class="col-sm-2 control-label" id="txt_fecha">FECHA :</label>
     <div class="col-sm-3">
-    {{ Form::text('date', $fecha_actual ?? "", ['id'=>'cmb_fecha', 'class'=>'form-control', 'placeholder'=>'Ingrese Fecha', 'style'=>"", 'autocomplete'=>'off']) }}
+        {{ Form::label('date', $fecha_actual ?? "", ['id'=>'cmb_fecha2', 'class'=>'form-control', 'placeholder'=>'Ingrese Fecha', 'style'=>"", 'autocomplete'=>'off']) }}
+        {{ Form::text('date', $fecha_actual ?? "", ['id'=>'cmb_fecha', 'class'=>'form-control', 'placeholder'=>'Ingrese Fecha', 'style'=>"", 'autocomplete'=>'off']) }}
     </div>
 </div>
 <div class="form-group">

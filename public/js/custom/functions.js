@@ -11,7 +11,7 @@ var ModalSettings = {
     element: '.new-::selector::-entity',
     form: '#form-::selector::-create',
    // submit: 'GUARDAR',
-    submit: 'ACEPTAR',
+    submit: 'NUEVO PEDIDO',
     messages: {
       confirm: {
         title: 'CREACIÓN DE ::ENTITY::',
@@ -35,7 +35,7 @@ var ModalSettings = {
     title: 'EDITAR ::ENTITY:: "::NAME::"',
     element: '.edit-::selector::-entity',
     form: '#form-::selector::-update',
-    submit: 'ACEPTAR',
+    submit: 'EDITAR PEDIDO',
     //submit: 'ACTUALIZAR',
     messages: {
       confirm: {
@@ -58,7 +58,7 @@ var ModalSettings = {
     element: '.delete-::selector::-entity',
     form: '#form-::selector::-delete',
     //submit: 'ELIMINAR',
-    submit: 'ACEPTAR',
+    submit: 'ELIMINAR PEDIDO',
     messages: {
       confirm: {
         title: 'ELIMINACIÓN DE ::ENTITY::',
@@ -422,38 +422,98 @@ function ModalForm(MC, MS, settings, view, id, action_element) {
       buttons = {
         main: {
           label: settings.submit,
-          className: 'btn-primary',
+          className: 'btn-primary valpedido',
           callback: function () {
+            if(cont==1){
+                    cont=0;
+                        if (settings.conditions.ignore_fields) {
+                          ignoreFields(settings.conditions.ignore_fields)
+                        }
 
-            if (settings.conditions.ignore_fields) {
-              ignoreFields(settings.conditions.ignore_fields)
+                        var form = $(settings.form.replace('::selector::', MS.selector));
+
+                        var url = form.attr('action').replace(':ROW_ID', id);
+                        AlertMessage.removeCurrentAlerts()
+                        if (settings.conditions.validation) {
+                          $(form).validate(settings.conditions.validation);
+                        }
+
+                        var data = $(form).serialize();
+
+                        if (settings.conditions.validation && !form.valid()) {
+                          return false;
+                        }
+
+                        if (settings.conditions.confirm_dialog) {
+                          ModalConfirm(MC, MS, form_dialog, url, data, settings)
+                        }
+                        else {
+                          MC.sendAjax(url, data, settings)
+                        }
+                        return false;
             }
+            else{
+              
+            $v_ajidegallina = $('#cmb_ajidegallina').val();
+            $v_tallarinconpollo = $('#cmb_tallarinconpollo').val();
+            $v_lomosaltado = $('#cmb_lomosaltado').val();
+            $v_estofadodepollo = $('#cmb_estofadodepollo').val();
+            $v_tacutacu = $('#cmb_tacutacu').val();
+            $v_chicharron = $('#cmb_chicharron').val();
+            if( $v_ajidegallina=="" && $v_tallarinconpollo=="" && $v_lomosaltado=="" && $v_estofadodepollo=="" && $v_tacutacu=="" && $v_chicharron==""){
+                bootbox.dialog({
+                  className: 'modal-danger',
+                  closeButton: false,
+                  message: "NO SE INTRODUJO EL PEDIDO, NO HAY CANTIDADES",
+                  title: "VALIDACION",
+                  buttons: {
+                      default: {
+                          label: "CERRAR",
+                          className: "btn-danger pr",
+                          callback: function() {
+                              
+                          }
+                      },
+                  }
+                });
+              }else{
+                if( isNaN($v_ajidegallina) || isNaN($v_tallarinconpollo) || isNaN($v_lomosaltado) || isNaN($v_estofadodepollo) || isNaN($v_tacutacu) || isNaN($v_chicharron) )
+                {
+                validacion_pedidos();
+                }
+                else{
+                        if (settings.conditions.ignore_fields) {
+                          ignoreFields(settings.conditions.ignore_fields)
+                        }
 
-            var form = $(settings.form.replace('::selector::', MS.selector));
+                        var form = $(settings.form.replace('::selector::', MS.selector));
 
-            var url = form.attr('action').replace(':ROW_ID', id);
+                        var url = form.attr('action').replace(':ROW_ID', id);
 
 
-            AlertMessage.removeCurrentAlerts()
+                        AlertMessage.removeCurrentAlerts()
 
-            if (settings.conditions.validation) {
-              $(form).validate(settings.conditions.validation);
+                        if (settings.conditions.validation) {
+                          $(form).validate(settings.conditions.validation);
+                        }
+
+                        var data = $(form).serialize();
+
+                        if (settings.conditions.validation && !form.valid()) {
+                          return false;
+                        }
+
+                        if (settings.conditions.confirm_dialog) {
+                          ModalConfirm(MC, MS, form_dialog, url, data, settings)
+                        }
+                        else {
+                          MC.sendAjax(url, data, settings)
+                        }
+
+                        return false;
+                  }
+                }
             }
-
-            var data = $(form).serialize();
-
-            if (settings.conditions.validation && !form.valid()) {
-              return false;
-            }
-
-            if (settings.conditions.confirm_dialog) {
-              ModalConfirm(MC, MS, form_dialog, url, data, settings)
-            }
-            else {
-              MC.sendAjax(url, data, settings)
-            }
-
-            return false;
           }
 
         },

@@ -62,7 +62,7 @@ function elementForMessage()
 }
 
 $('#show-profile').on('click', function(){
-
+    var url_show_profile = "/profile"
     $.get(url_show_profile).done(function (data) {
 
         bootbox.dialog({

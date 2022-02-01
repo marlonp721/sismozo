@@ -16,3 +16,7 @@
 		</div>
 	</div>
 </div>
+
+<script type="application/javascript">
+    var cont=2;
+</script>

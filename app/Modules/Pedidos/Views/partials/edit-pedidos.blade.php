@@ -17,8 +17,11 @@
 <script>
 const info_pedido = {!! json_encode($pedidos) !!};
 const info_detalle = {!! json_encode($detalle) !!};
+var cont=0;
+$( ".valpedido" ).show();
 $('#cmb_mesa').val(info_pedido.mesa).trigger("change", ["llenar"]);
 $('#cmb_fecha').val(info_pedido.date).trigger("change", ["llenar"]);
+$('#cmb_fecha2').html(info_pedido.date);
 var monto_total=0;
 for (var i = 0; i < info_detalle.length; i++) {
 	switch (info_detalle[i].plato_id) {
