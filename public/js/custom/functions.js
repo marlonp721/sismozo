@@ -11,7 +11,7 @@ var ModalSettings = {
     element: '.new-::selector::-entity',
     form: '#form-::selector::-create',
    // submit: 'GUARDAR',
-    submit: 'NUEVO PEDIDO',
+    submit: 'GUARDAR PEDIDO',
     messages: {
       confirm: {
         title: 'CREACIÓN DE ::ENTITY::',
